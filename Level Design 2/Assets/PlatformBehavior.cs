@@ -62,7 +62,7 @@ public class PlatformBehavior : MonoBehaviour
             }
             foreach (GameObject o in FortyFive)
             {
-                o.SetActive(state);
+                //o.SetActive(state);
             }
             foreach (GameObject o in Ninety)
             {
@@ -70,7 +70,7 @@ public class PlatformBehavior : MonoBehaviour
             }
             foreach (GameObject o in OneThirtyFive)
             {
-                o.SetActive(state);
+                //o.SetActive(state);
             }
             foreach (GameObject o in OneEighty)
             {
@@ -78,7 +78,7 @@ public class PlatformBehavior : MonoBehaviour
             }
             foreach (GameObject o in TwoTwentyFive)
             {
-                o.SetActive(state);
+               // o.SetActive(state);
             }
             foreach (GameObject o in TwoSeventy)
             {
@@ -86,7 +86,7 @@ public class PlatformBehavior : MonoBehaviour
             }
             foreach (GameObject o in ThreeFifteen)
             {
-                o.SetActive(state);
+               // o.SetActive(state);
             }
             state = !state;
         }
