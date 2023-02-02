@@ -18,12 +18,27 @@ public class PlayerController : MonoBehaviour
     */
     public float movementIntensity;
 
-    public float jumpIntensity;
+    private float jumpIntensity = 1.0f;
+
+    private bool isGrounded;
     /* 
     Creates a public variable that will be used to set 
     the movement intensity (from within Unity)
     */
     float lastJump;
+
+    public int speed;
+
+    private float gravityValue = -9.81f;
+
+    public CharacterController characterController;
+
+    public Transform cameraHolder;
+    public float mouseSens = 4f;
+    public float upLimit = -50;
+    public float downLimit = 50;
+
+    Vector3 playerVelocity;
 
     void Start()
     {
@@ -36,7 +51,7 @@ public class PlayerController : MonoBehaviour
         /* 
     	Establish some directions 
     	based on the cameraTarget object's orientation 
-    	*/
+    	
         var ForwardDirection = cameraTarget.transform.forward;
         var RightDirection = cameraTarget.transform.right;
 
@@ -45,7 +60,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(ForwardDirection * movementIntensity);
             /* You may want to try using velocity rather than force.
             This allows for a more responsive control of the movement
-            possibly better suited to first person controls, eg: */
+            possibly better suited to first person controls, eg: 
             //rb.velocity = ForwardDirection * movementIntensity;
         }
         // Move Backwards
@@ -60,16 +75,47 @@ public class PlayerController : MonoBehaviour
         // Move Leftwards
         if (Input.GetKey(KeyCode.Q)) {
             rb.AddForce(-RightDirection * movementIntensity);
+        } */
+
+        Move();
+        Rotate();
+
+        isGrounded = characterController.isGrounded;
+
+        if (isGrounded && playerVelocity.y < 0) {
+            playerVelocity.y = 0f;
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
+            playerVelocity.y += Mathf.Sqrt(jumpIntensity * -3.0f * gravityValue);
 
-            if(Time.time - lastJump > 1)
-            {
-                rb.AddForce(Vector3.up * jumpIntensity, ForceMode.Impulse);
-                lastJump = Time.time;
-            }
         }
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        characterController.Move(playerVelocity * Time.deltaTime);
+    }
+
+    public void Move()
+    {
+        float horizontalAxis = Input.GetAxis("Horizontal");
+        float verticalAxis = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.forward * verticalAxis + transform.right * horizontalAxis;
+        characterController.Move(move * Time.deltaTime * speed);
+
+    }
+
+    public void Rotate()
+    {
+        float horizontalRot = Input.GetAxis("Mouse X");
+        float verticalRot = Input.GetAxis("Mouse Y");
+
+        transform.Rotate(0, horizontalRot * mouseSens, 0);
+        cameraHolder.Rotate(-verticalRot * mouseSens, 0, 0);
+
+        Vector3 currentRotation = cameraHolder.localEulerAngles;
+        if (currentRotation.x > 180) currentRotation.x -= 360;
+        currentRotation.x = Mathf.Clamp(currentRotation.x, upLimit, downLimit);
+        cameraHolder.localRotation = Quaternion.Euler(currentRotation);
     }
 }
