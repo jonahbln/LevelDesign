@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     */
     public float movementIntensity;
 
-    private float jumpIntensity = 1.0f;
+    public float jumpIntensity = 1.0f;
 
     private bool isGrounded;
     /* 
@@ -76,6 +76,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Q)) {
             rb.AddForce(-RightDirection * movementIntensity);
         } */
+        if (Cursor.visible == true)
+        {
+            Cursor.visible = false;
+        }
+
 
         Move();
         Rotate();

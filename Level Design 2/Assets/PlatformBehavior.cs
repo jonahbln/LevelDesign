@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlatformBehavior : MonoBehaviour
 {
 
-    public float timeDelay = 3f;
+    public float timeDelay = 2.5f;
+    public float scale = .005f;
+
+    private float time;
 
     float previous = 0f; 
 
@@ -17,6 +20,8 @@ public class PlatformBehavior : MonoBehaviour
     GameObject[] TwoTwentyFive;
     GameObject[] TwoSeventy;
     GameObject[] ThreeFifteen;
+
+    GameObject player;
 
     bool state = false;
     // Start is called before the first frame update
@@ -30,6 +35,7 @@ public class PlatformBehavior : MonoBehaviour
         TwoTwentyFive = GameObject.FindGameObjectsWithTag("225");
         TwoSeventy = GameObject.FindGameObjectsWithTag("270");
         ThreeFifteen = GameObject.FindGameObjectsWithTag("315");
+        player = GameObject.FindGameObjectWithTag("Player");
         foreach (GameObject o in Zero) {
             o.SetActive(state);
         }
@@ -45,6 +51,7 @@ public class PlatformBehavior : MonoBehaviour
         {
             o.SetActive(state);
         }
+        time = timeDelay;
 
     }
 
@@ -52,7 +59,7 @@ public class PlatformBehavior : MonoBehaviour
     void Update()
     {
         Debug.Log("H32O");
-        if (Time.time - previous > timeDelay)
+        if (Time.time - previous > time)
         {
             Debug.Log("HO");
             previous = Time.time;
@@ -60,35 +67,21 @@ public class PlatformBehavior : MonoBehaviour
             {
             o.SetActive(!state);
             }
-            foreach (GameObject o in FortyFive)
-            {
-                //o.SetActive(state);
-            }
             foreach (GameObject o in Ninety)
             {
                 o.SetActive(!state);
-            }
-            foreach (GameObject o in OneThirtyFive)
-            {
-                //o.SetActive(state);
             }
             foreach (GameObject o in OneEighty)
             {
                 o.SetActive(!state);
             }
-            foreach (GameObject o in TwoTwentyFive)
-            {
-               // o.SetActive(state);
-            }
             foreach (GameObject o in TwoSeventy)
             {
                 o.SetActive(!state);
             }
-            foreach (GameObject o in ThreeFifteen)
-            {
-               // o.SetActive(state);
-            }
             state = !state;
+            
+            time = timeDelay - (scale * player.transform.position.y);
         }
     }
 }
