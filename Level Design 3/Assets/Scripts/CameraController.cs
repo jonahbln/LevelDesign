@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     {
 
         // Align to player position
-        transform.position = new Vector3(player.transform.position.x, (float)(player.transform.position.y + 1.5), player.transform.position.z);
+        transform.position = new Vector3(player.transform.position.x, (float)(player.transform.position.y + 2.5), player.transform.position.z);
 
         /*// Rotate left
         if (Input.GetKey(KeyCode.A)) {
