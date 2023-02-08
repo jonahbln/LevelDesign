@@ -6,7 +6,7 @@ public class StartFight : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Starting fight...");
+        //Debug.Log("Starting fight...");
         if (other.gameObject.tag.Equals("Player")) BossBehavior.startFight = true;
     }
 }
