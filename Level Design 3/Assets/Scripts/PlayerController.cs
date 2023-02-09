@@ -1,126 +1,59 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class PlayerController : MonoBehaviour
 {
-    /* 
-    Create a variable called 'rb' that will represent the 
-    rigid body of this object.
-    */
-    private Rigidbody rb;
+    public float speed = 10f;
+    public float jumpHeight = 1f;
+    public float gravity = 9.8f;
+    public float airControl = 10f;
 
-    // Create a public variable for the cameraTarget object
-    public GameObject cameraTarget;
-    /* 
-    You will need to set the cameraTarget object in Unity. 
-    The direction this object is facing will be used to determine
-    the direction of forces we will apply to our player.
-    */
-    public float movementIntensity;
-
-    public float jumpIntensity = 1.0f;
-
-    private bool isGrounded;
-    /* 
-    Creates a public variable that will be used to set 
-    the movement intensity (from within Unity)
-    */
-    float lastJump;
-
-    public int speed;
-
-    private float gravityValue = -9.81f;
-
-    public CharacterController characterController;
-
-    public Transform cameraHolder;
-    public float mouseSens = 4f;
-    public float upLimit = -50;
-    public float downLimit = 50;
-
-    Vector3 playerVelocity;
+    CharacterController controller;
+    Vector3 input;
+    Vector3 moveDirection;
+    bool first = true;
 
     void Start()
     {
-        // make our rb variable equal the rigid body component
-        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        /* 
-    	Establish some directions 
-    	based on the cameraTarget object's orientation 
-    	
-        var ForwardDirection = cameraTarget.transform.forward;
-        var RightDirection = cameraTarget.transform.right;
-
-        // Move Forwards
-        if (Input.GetKey(KeyCode.W)) {
-            rb.AddForce(ForwardDirection * movementIntensity);
-            /* You may want to try using velocity rather than force.
-            This allows for a more responsive control of the movement
-            possibly better suited to first person controls, eg: 
-            //rb.velocity = ForwardDirection * movementIntensity;
-        }
-        // Move Backwards
-        if (Input.GetKey(KeyCode.S)) {
-            // Adding a negative to the direction reverses it
-            rb.AddForce(-ForwardDirection * movementIntensity);
-        }
-        // Move Rightwards (eg Strafe. *We are using A & D to swivel)
-        if (Input.GetKey(KeyCode.E)) {
-            rb.AddForce(RightDirection * movementIntensity);
-        }
-        // Move Leftwards
-        if (Input.GetKey(KeyCode.Q)) {
-            rb.AddForce(-RightDirection * movementIntensity);
-        } */
-        if (Cursor.visible == true)
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        if(BossBehavior.dead && first)
         {
-            Cursor.visible = false;
+            jumpHeight += 1f;
+            airControl += 3f;
+            first = false;
         }
 
+        input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
 
-        Move();
-        Rotate();
-
-        isGrounded = characterController.isGrounded;
-
-        if (isGrounded && playerVelocity.y < 0) {
-            playerVelocity.y = 0f;
-        }
-
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if (controller.isGrounded)
         {
-            playerVelocity.y += Mathf.Sqrt(jumpIntensity * -3.0f * gravityValue);
+            moveDirection = input;
 
+            if (Input.GetButton("Jump"))
+            {
+                moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
+            }
+            else
+            {
+                moveDirection.y = 0.0f;
+            }
         }
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        characterController.Move(playerVelocity * Time.deltaTime);
-    }
+        else
+        {
+            input.y = moveDirection.y;
+            moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
+        }
 
-    public void Move()
-    {
-        float horizontalAxis = Input.GetAxis("Horizontal");
-        float verticalAxis = Input.GetAxis("Vertical");
+        moveDirection.y -= gravity * Time.deltaTime;
 
-        Vector3 move = transform.forward * verticalAxis + transform.right * horizontalAxis;
-        characterController.Move(move * Time.deltaTime * speed);
-
-    }
-
-    public void Rotate()
-    {
-        float horizontalRot = Input.GetAxis("Mouse X");
-        float verticalRot = Input.GetAxis("Mouse Y");
-
-        transform.Rotate(0, horizontalRot * mouseSens, 0);
-        cameraHolder.Rotate(-verticalRot * mouseSens, 0, 0);
-
-        Vector3 currentRotation = cameraHolder.localEulerAngles;
-        if (currentRotation.x > 180) currentRotation.x -= 360;
-        currentRotation.x = Mathf.Clamp(currentRotation.x, upLimit, downLimit);
-        cameraHolder.localRotation = Quaternion.Euler(currentRotation);
+        controller.Move(moveDirection * speed * Time.deltaTime);
     }
 }

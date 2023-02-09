@@ -13,12 +13,19 @@ public class BossBehavior : MonoBehaviour
 
     public Transform playerTransform;
 
+    public GameObject[] destroy;
+    public GameObject shoe1;
+    public GameObject shoe2;
+    public static bool dead;
+    public GameObject[] save;
+
     enum BossState
     {
         Stomp,
         Shoot,
         Idle,
-        ReturnToBase
+        ReturnToBase,
+        dead
     }
 
     BossState state;
@@ -46,6 +53,16 @@ public class BossBehavior : MonoBehaviour
     {
         if (!startFight) return;
 
+        if(Input.GetKey("f"))
+        {
+            foreach(GameObject o in destroy)
+            {
+                o.SetActive(false);
+
+            }
+            state = BossState.dead;
+        }
+
 
 
         if (state == BossState.Idle)
@@ -62,7 +79,28 @@ public class BossBehavior : MonoBehaviour
             ReturnToBase();
         }
 
+        if(state == BossState.dead)
+        {
+            stompTarget = new Vector3(playerTransform.position.x, playerTransform.position.y + 7, playerTransform.position.z);
+            if (transform.position.x > stompTarget.x + 1 || transform.position.x < stompTarget.x - 1)
+            {
+                transform.position = Vector3.MoveTowards(transform.position,
+    new Vector3(stompTarget.x, stompTarget.y - 7f, stompTarget.z),
+    floatSpeed * 3f * Time.deltaTime);
+            }
+            else
+            {
+                shoe1.SetActive(true);
+                shoe2.SetActive(true);
+                dead = true;
+                foreach (GameObject o in save)
+                {
+                    o.SetActive(false);
+                   
+                }
+            }
 
+        }
     }
 
     // boss stomps on the player
