@@ -32,6 +32,8 @@ public class BossBehavior : MonoBehaviour
 
     Vector3 stompTarget;
 
+    public GameObject bullet;
+
 
     void Start()
     {
@@ -111,10 +113,10 @@ public class BossBehavior : MonoBehaviour
             stompTarget = new Vector3(playerTransform.position.x, playerTransform.position.y + 7, playerTransform.position.z);
         }
 
-        if(timer >= 0.5f)
+        if(timer >= 1f)
         {
             timer = 0;
-            //shoot bullet
+            Instantiate(bullet, transform.position, transform.rotation);
         }
 
 
