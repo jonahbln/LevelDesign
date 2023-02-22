@@ -46,11 +46,17 @@ public class TransparencyBehavior : MonoBehaviour
 
     void MakeSolid()
     {
-        mr.material = solidMaterial;
+     for(int i = 0; i < transform.childCount; i++)
+      {
+            transform.GetChild(i).GetComponent<MeshRenderer>().material = solidMaterial;
+      }
     }
 
     void MakeTransparent()
     {
-        mr.material = xrayMaterial;
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).GetComponent<MeshRenderer>().material = xrayMaterial;
+        }
     }
 }
