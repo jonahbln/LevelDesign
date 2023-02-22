@@ -5,11 +5,13 @@ using UnityEngine;
 public class TransparencyBehavior : MonoBehaviour
 {
 
-    public Material normalMaterial;
-    public Material seeThruMaterial;
-
     private MeshRenderer mr;
 
+    public Material solidMaterial;
+    public Material xrayMaterial;
+
+    bool firstTimeXray = true;
+    bool firstTimeSolid = true;
 
     void Start()
     {
@@ -21,11 +23,34 @@ public class TransparencyBehavior : MonoBehaviour
     {
         if(PlayerController.XRAY)
         {
-            mr.material = seeThruMaterial;
+            if(firstTimeXray)
+            {
+                Invoke("MakeTransparent", 0.6f);
+                firstTimeXray = false;
+                firstTimeSolid = true;
+               
+            }
            
         } else
         {
-            mr.material = normalMaterial;
+            if (firstTimeSolid)
+            {
+                Invoke("MakeSolid", 0.6f);
+                firstTimeXray = true;
+                firstTimeSolid = false;
+                
+            }
+          
         }
+    }
+
+    void MakeSolid()
+    {
+        mr.material = solidMaterial;
+    }
+
+    void MakeTransparent()
+    {
+        mr.material = xrayMaterial;
     }
 }

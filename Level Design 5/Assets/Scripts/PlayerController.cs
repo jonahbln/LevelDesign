@@ -32,6 +32,13 @@ public class PlayerController : MonoBehaviour
 
         input *= speed;
 
+        if (XRAY) input *= 0.5f;
+
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            XRAY = !XRAY;
+        }
+
         if (controller.isGrounded)
         {
 
