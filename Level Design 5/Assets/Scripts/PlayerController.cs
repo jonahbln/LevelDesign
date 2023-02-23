@@ -15,11 +15,15 @@ public class PlayerController : MonoBehaviour
     CharacterController controller;
     Vector3 input;
 
+    AudioSource goggleSound;
+
     Vector3 moveDirection;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+
+        goggleSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +41,14 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             XRAY = !XRAY;
+
+            if(!goggleSound.enabled) {
+                goggleSound.enabled = true;
+            }
+            else {
+                goggleSound.enabled = false;
+            }
+            
         }
 
         if (controller.isGrounded)
