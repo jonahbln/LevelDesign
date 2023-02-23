@@ -32,6 +32,9 @@ public class PickupBehavior : MonoBehaviour
 
     private void OnDestroy()
     {
-        FindObjectOfType<PlayerBehavior>().Pickup();
+        if(FindObjectOfType<PlayerBehavior>() != null)
+        {
+            FindObjectOfType<PlayerBehavior>().Pickup();
+        }
     }
 }

@@ -355,6 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3732143245242474399}
   - component: {fileID: 7330310243244719360}
+  - component: {fileID: 6343118216607516410}
   m_Layer: 0
   m_Name: Area Light
   m_TagString: Untagged
@@ -439,3 +440,17 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6343118216607516410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3095691935346910463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a52ef70c554ae645a576725dd3a9057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  random: 0
+  flicker: 4

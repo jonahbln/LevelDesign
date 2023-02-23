@@ -76,6 +76,9 @@ public class PlayerController : MonoBehaviour
         }
 
         moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move(input * Time.deltaTime);
+        if(controller.enabled)
+        {
+            controller.Move(input * Time.deltaTime);
+        }
     }
 }
