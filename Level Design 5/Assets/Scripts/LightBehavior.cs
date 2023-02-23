@@ -6,6 +6,7 @@ public class LightBehavior : MonoBehaviour
 {
     public float random;
     public float flicker;
+    public Color escapeColor;
     bool first = true;
     void Start()
     {
@@ -22,6 +23,10 @@ public class LightBehavior : MonoBehaviour
         if(Time.time % 15 > random - 1 && Time.time % 15 < random + 1 && first)
         {
             flick();
+        }
+        if(PlayerBehavior.pickup == true)
+        {
+            GetComponent<Light>().color = escapeColor;
         }
     }
 

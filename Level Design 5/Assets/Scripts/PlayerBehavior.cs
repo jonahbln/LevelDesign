@@ -8,6 +8,7 @@ public class PlayerBehavior : MonoBehaviour
 {
     public Text GameText;
     public string sceneName;
+    public static bool pickup = false;
     void Start()
     {
         GameText.gameObject.SetActive(false);
@@ -21,9 +22,10 @@ public class PlayerBehavior : MonoBehaviour
 
     public void Pickup()
     {
-        GameText.text = "YOU WIN!";
+        GameText.text = "ESCAPE!";
         GameText.gameObject.SetActive(true);
-        GetComponent<CharacterController>().enabled = false;
+        //GetComponent<CharacterController>().enabled = false;
+        pickup = true;
         Invoke("Load", 5f);
     }
 
