@@ -12,32 +12,29 @@ public class TurretBehavior : MonoBehaviour
     Transform outerLaser;
     Transform player;
     float initialTime;
+
+    Vector3 initialRotation;
     void Start()
     {
         innerLaser = transform.GetChild(2);
         outerLaser = transform.GetChild(3);
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        initialRotation = transform.localRotation.eulerAngles;
     }
 
 
     void FixedUpdate()
     {
         transform.LookAt(player);
+
         RaycastHit hit;
         Ray r = new Ray(innerLaser.position, transform.forward);
 
         if (Physics.Raycast(r, out hit, range))
         {
-            if(hit.collider.CompareTag("Wall")) 
-            {
-                canFire = false;
-            }
-            else
-            {
-                canFire = true;
-            }
             if(hit.collider.CompareTag("Player") && canFire)
             {
+                canFire = false;
                 Invoke("Fire", 0.5f);
             }
             else
@@ -50,17 +47,24 @@ public class TurretBehavior : MonoBehaviour
     void Fire()
     {
         outerLaser.GetComponent<MeshRenderer>().enabled = true;
-        //canFire = false;
 
-        // !!!!!
-        // DONT MESS WITH THIS YOU WILL CRASH UNITY AND LOSE ALL YOUR WORK
-        // !!!!!
-        //initialTime = Time.time;
-        //while (Time.time - initialTime <= 2f)
-        //{
+        RaycastHit hit;
+        Ray r = new Ray(innerLaser.position, transform.forward);
 
-        //}
-        // outerLaser.GetComponent<MeshRenderer>().enabled = false;
-        //canFire = true;
+        if (Physics.Raycast(r, out hit, range))
+        {
+            if (hit.collider.CompareTag("Player"))
+            {
+                FindObjectOfType<PlayerBehavior>().Die();
+            }
+        }
+
+        Invoke("changeFire", .5f);
+    }
+
+    void changeFire()
+    {
+        outerLaser.GetComponent<MeshRenderer>().enabled = false;
+        canFire = !canFire;
     }
 }
