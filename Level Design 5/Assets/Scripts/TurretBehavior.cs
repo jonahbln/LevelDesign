@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class TurretBehavior : MonoBehaviour
 {
-    public bool canFire = true;
+    public float range = 4f;
 
-    public Transform innerLaser;
-    public Transform outerLaser;
-    public Transform player;
-    public float initialTime;
+    bool canFire = true;
+
+    Transform innerLaser;
+    Transform outerLaser;
+    Transform player;
+    float initialTime;
     void Start()
     {
         innerLaser = transform.GetChild(2);
@@ -24,8 +26,16 @@ public class TurretBehavior : MonoBehaviour
         RaycastHit hit;
         Ray r = new Ray(innerLaser.position, transform.forward);
 
-        if (Physics.Raycast(r, out hit, Mathf.Infinity))
+        if (Physics.Raycast(r, out hit, range))
         {
+            if(hit.collider.CompareTag("Wall")) 
+            {
+                canFire = false;
+            }
+            else
+            {
+                canFire = true;
+            }
             if(hit.collider.CompareTag("Player") && canFire)
             {
                 Invoke("Fire", 0.5f);
