@@ -26,7 +26,7 @@ public class PlayerBehavior : MonoBehaviour
         GameText.gameObject.SetActive(true);
         //GetComponent<CharacterController>().enabled = false;
         pickup = true;
-        Invoke("Load", 5f);
+        Invoke("Load", 20f);
     }
 
     public void Die()
