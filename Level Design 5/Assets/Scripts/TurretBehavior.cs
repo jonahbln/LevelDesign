@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurretBehavior : MonoBehaviour
 {
     public float range = 4f;
+    public AudioClip SFX;
 
     bool canFire = true;
 
@@ -30,9 +31,10 @@ public class TurretBehavior : MonoBehaviour
         RaycastHit hit;
         Ray r = new Ray(innerLaser.position, transform.forward);
 
-        if (Physics.Raycast(r, out hit, range))
+        if (Physics.Raycast(r, out hit, range) && !WeaponBehavior.stun)
         {
-            if(hit.collider.CompareTag("Player") && canFire)
+            
+            if (hit.collider.CompareTag("Player") && canFire && !hit.collider.CompareTag("Wall"))
             {
                 canFire = false;
                 Invoke("Fire", 0.5f);
@@ -47,6 +49,7 @@ public class TurretBehavior : MonoBehaviour
     void Fire()
     {
         outerLaser.GetComponent<MeshRenderer>().enabled = true;
+        AudioSource.PlayClipAtPoint(SFX, Camera.main.transform.position);
 
         RaycastHit hit;
         Ray r = new Ray(innerLaser.position, transform.forward);
