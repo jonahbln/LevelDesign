@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SharkBehavior : MonoBehaviour
 {
     public Transform player;
     public float slow = 10f;
+    public Text gameText;
+
     //public AudioClip enemySFX;
 
     void Start()
@@ -35,11 +38,16 @@ public class SharkBehavior : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            //game over
+            gameText.text = "GAME OVER";
+            gameText.gameObject.SetActive(true);
         }
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+
+    //}
 }

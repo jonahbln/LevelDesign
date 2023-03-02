@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4423885803239357267}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33987,7 +33987,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 551
+  m_VersionIndex: 560
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -34087,7 +34087,7 @@ GameObject:
   - component: {fileID: 4423885803733411065}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68059,7 +68059,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 554
+  m_VersionIndex: 563
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -68159,7 +68159,7 @@ GameObject:
   - component: {fileID: 4423885803976800234}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68391,7 +68391,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 851
+  m_VersionIndex: 860
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -68488,7 +68488,7 @@ GameObject:
   - component: {fileID: 4423885804157176869}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68720,7 +68720,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 848
+  m_VersionIndex: 857
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -68813,6 +68813,7 @@ GameObject:
   - component: {fileID: 4423885804492409136}
   - component: {fileID: 4423885804492409137}
   - component: {fileID: 4423885804492409139}
+  - component: {fileID: 2089902779}
   m_Layer: 0
   m_Name: BoatParent
   m_TagString: Player
@@ -68827,7 +68828,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4423885804492409142}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -89, y: 2.248999, z: -91}
   m_LocalScale: {x: 1, y: 0.99999994, z: 1.0000002}
   m_ConstrainProportionsScale: 0
@@ -68869,6 +68870,19 @@ MonoBehaviour:
   torque: 10
   rightAnim: {fileID: 4423885804802005394}
   leftAnim: {fileID: 4423885804979712182}
+--- !u!65 &2089902779
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423885804492409142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.0896, y: 6.50921, z: 17.685596}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4423885804802005397
 GameObject:
   m_ObjectHideFlags: 0
@@ -68885,7 +68899,7 @@ GameObject:
   - component: {fileID: 4423885804802005394}
   m_Layer: 0
   m_Name: RightOar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70599,7 +70613,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3080
+  m_VersionIndex: 3086
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -70721,7 +70735,7 @@ GameObject:
   - component: {fileID: 4423885804979712182}
   m_Layer: 0
   m_Name: LeftOar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72435,7 +72449,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3080
+  m_VersionIndex: 3086
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -72557,7 +72571,7 @@ GameObject:
   - component: {fileID: 4423885805082537373}
   m_Layer: 0
   m_Name: Boat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72570,7 +72584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4423885805082537363}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -3.6933403, y: 3.1910014, z: -3.3879998}
+  m_LocalPosition: {x: 79.7, y: 3.1910014, z: 26.9}
   m_LocalScale: {x: 1, y: 1, z: 0.82630014}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -74225,7 +74239,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3767
+  m_VersionIndex: 3773
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

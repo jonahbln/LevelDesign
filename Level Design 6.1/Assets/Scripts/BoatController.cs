@@ -47,7 +47,7 @@ public class BoatController : MonoBehaviour
             rb.AddTorque(transform.up * -torque);
             rb.AddForce(transform.forward * rowForce);
         }
-        rb.velocity = Vector3.MoveTowards(Vector3.ClampMagnitude(rb.velocity, 5f), Vector3.zero, Time.deltaTime * 1.5f);
+        rb.velocity = Vector3.MoveTowards(Vector3.ClampMagnitude(rb.velocity, 50f), Vector3.zero, Time.deltaTime * 1.5f);
         rb.angularDrag += 0.01f;
     }
 
