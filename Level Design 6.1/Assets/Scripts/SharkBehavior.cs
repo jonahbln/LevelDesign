@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SharkBehavior : MonoBehaviour
 {
     public Transform player;
-    public float slow = 10f;
+    public float speed = 10f;
     public Text gameText;
 
     //public AudioClip enemySFX;
@@ -28,8 +28,8 @@ public class SharkBehavior : MonoBehaviour
 
         float origY = transform.position.y;
 
-        transform.LookAt(player);
-        transform.position += transform.forward  * (1/slow);
+        //transform.LookAt(player);
+        transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
         //transform.position = Vector3.MoveTowards(transform.position, player.position, step);
         transform.position = new Vector3(transform.position.x, origY, transform.position.z);
 
