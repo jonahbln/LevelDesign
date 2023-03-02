@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoatController : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class BoatController : MonoBehaviour
 
     bool canRowRight = true;
     bool canRowLeft = true;
+
+    public Text gameText;
 
     enum Direction
     {
@@ -28,8 +31,16 @@ public class BoatController : MonoBehaviour
     
     void Update()
     {
+        if (transform.position.z > 595f)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularDrag = 1f;
+            gameText.text = "YOU WIN!!";
+            gameText.gameObject.SetActive(true);
+            return;
+        }
 
-        if((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             && canRowRight)
         {
             StartCoroutine("Row", Direction.Right);
@@ -47,8 +58,9 @@ public class BoatController : MonoBehaviour
             rb.AddTorque(transform.up * -torque);
             rb.AddForce(transform.forward * rowForce);
         }
-        rb.velocity = Vector3.MoveTowards(Vector3.ClampMagnitude(rb.velocity, 50f), Vector3.zero, Time.deltaTime * 1.5f);
+        rb.velocity = Vector3.MoveTowards(Vector3.ClampMagnitude(rb.velocity, 30f), Vector3.zero, Time.deltaTime * 1.5f);
         rb.angularDrag += 0.01f;
+
     }
 
     IEnumerator Row(Direction d)
