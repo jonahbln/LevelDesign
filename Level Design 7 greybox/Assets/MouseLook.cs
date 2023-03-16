@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MouseLook : MonoBehaviour
 {
@@ -14,12 +15,22 @@ public class MouseLook : MonoBehaviour
 
     public float zoomAmount = 10f;
 
+    public GameObject targetSnake;
+
+    Camera cam;
+
+    bool seen = false;
+
+    public GameObject winText;
+
 
     void Start()
     {
         playerBody = transform.parent.transform;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        cam = UnityEngine.Camera.main;
     }
 
     // Update is called once per frame
@@ -45,8 +56,14 @@ public class MouseLook : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                if (seen == true) {
+                    Debug.Log("Snake pic)");
+                    winText.SetActive(true);
+                  
+                }
                 crosshair.GetComponent<Animator>().SetBool("click", true);
                 Invoke("reset", 1);
+                
             }
         }
         else
@@ -55,6 +72,17 @@ public class MouseLook : MonoBehaviour
             crosshair.SetActive(false);
             GetComponent<Camera>().fieldOfView = 60;
         }
+
+        Vector3 viewPos = cam.WorldToViewportPoint(targetSnake.transform.position);
+        if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0) {
+            // Your object is in the range of the camera, you can apply your behaviour
+           // Debug.Log("Seen");
+            seen = true;
+        }
+        else {
+            seen = false;
+        }
+
     }
     void reset()
     {
