@@ -10,6 +10,10 @@ public class MouseLook : MonoBehaviour
 
     float pitch = 0;
 
+    public GameObject crosshair;
+
+    public float zoomAmount = 10f;
+
 
     void Start()
     {
@@ -36,11 +40,26 @@ public class MouseLook : MonoBehaviour
 
         if(Input.GetMouseButton(1))
         {
-            GetComponent<Camera>().fieldOfView = 20;
+            GetComponent<Camera>().fieldOfView = zoomAmount;
+            crosshair.SetActive(true);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                crosshair.GetComponent<Animator>().SetBool("click", true);
+                Invoke("reset", 1);
+            }
         }
         else
         {
+
+            crosshair.SetActive(false);
             GetComponent<Camera>().fieldOfView = 60;
         }
     }
+    void reset()
+    {
+        crosshair.GetComponent<Animator>().SetBool("click", false);
+    }
 }
+
+
