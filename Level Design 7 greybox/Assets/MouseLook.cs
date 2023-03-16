@@ -23,6 +23,8 @@ public class MouseLook : MonoBehaviour
 
     public GameObject winText;
 
+    private AudioSource cameraNoise;
+
 
     void Start()
     {
@@ -31,6 +33,7 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         cam = UnityEngine.Camera.main;
+        cameraNoise = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,6 +59,7 @@ public class MouseLook : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                cameraNoise.Play();
                 if (seen == true) {
                     winText.SetActive(true);
                   
