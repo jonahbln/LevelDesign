@@ -57,7 +57,6 @@ public class MouseLook : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 if (seen == true) {
-                    Debug.Log("Snake pic)");
                     winText.SetActive(true);
                   
                 }
@@ -75,8 +74,6 @@ public class MouseLook : MonoBehaviour
 
         Vector3 viewPos = cam.WorldToViewportPoint(targetSnake.transform.position);
         if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0) {
-            // Your object is in the range of the camera, you can apply your behaviour
-           // Debug.Log("Seen");
             seen = true;
         }
         else {
