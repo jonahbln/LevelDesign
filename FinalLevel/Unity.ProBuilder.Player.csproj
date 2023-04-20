@@ -78,8 +78,8 @@
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/SharedVertex.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/ElementSelection.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/WingedEdgeEnumerator.cs" />
-    <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/MeshTransform.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/ColorUtility.cs" />
+    <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/MeshTransform.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/VertexEditing.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/BezierShape.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/RaycastHit.cs" />
@@ -99,9 +99,9 @@
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/InternalMeshUtility.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Shapes/Cube.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/Log.cs" />
-    <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/EntityBehaviour.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/VertexPositioning.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Shapes/Shape.cs" />
+    <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/EntityBehaviour.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/SelectionPicker.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/VectorMask.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/UV/UVEditing.cs" />
@@ -370,6 +370,9 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>/Applications/Unity/Hub/Editor/2021.2.10f1/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/AOT/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>

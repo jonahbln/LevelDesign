@@ -78,8 +78,8 @@
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/SharedVertex.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/ElementSelection.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/WingedEdgeEnumerator.cs" />
-    <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/MeshTransform.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/ColorUtility.cs" />
+    <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/MeshTransform.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/VertexEditing.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/BezierShape.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/RaycastHit.cs" />
@@ -99,9 +99,9 @@
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/InternalMeshUtility.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Shapes/Cube.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/Log.cs" />
-    <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/EntityBehaviour.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/VertexPositioning.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Shapes/Shape.cs" />
+    <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/EntityBehaviour.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/SelectionPicker.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/Core/VectorMask.cs" />
     <Compile Include="Library/PackageCache/com.unity.probuilder@5.0.6/Runtime/MeshOperations/UV/UVEditing.cs" />
@@ -428,17 +428,32 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>/Applications/Unity/Hub/Editor/2021.2.10f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>/Applications/Unity/Hub/Editor/2021.2.10f1/Unity.app/Contents/NetStandard/ref/2.1.0/netstandard.dll</HintPath>

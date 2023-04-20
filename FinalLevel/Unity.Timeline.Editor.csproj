@@ -72,13 +72,13 @@
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Items/ClipItem.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/TimelineSelection.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Undo/UndoExtensions.cs" />
-    <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Manipulators/AddDelete/IAddDeleteItemMode.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Utilities/MarkerModifier.cs" />
+    <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Manipulators/AddDelete/IAddDeleteItemMode.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Window/TimelineWindow_Duration.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Tooltip.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Manipulators/Sequence/SelectAndMoveItem.cs" />
-    <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Utilities/Scopes/LabelWidthScope.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Items/ItemsGroup.cs" />
+    <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Utilities/Scopes/LabelWidthScope.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/TimelineUtility.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Signals/SignalEmitterEditor.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/State/ISequenceState.cs" />
@@ -266,8 +266,8 @@
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Utilities/ClipModifier.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Signals/SignalReceiverHeader.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Audio/AudioClipPropertiesDrawer.cs" />
-    <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Window/OverlayDrawer.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/CustomEditors/ClipEditor.cs" />
+    <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Window/OverlayDrawer.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/Window/TimelineEditorWindow.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/treeview/Snapping/IAttractable.cs" />
     <Compile Include="Library/PackageCache/com.unity.timeline@1.6.3/Editor/treeview/ItemGui/ISelectable.cs" />
@@ -591,17 +591,32 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>/Applications/Unity/Hub/Editor/2021.2.10f1/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.7.6/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library/PackageCache/com.unity.collab-proxy@1.13.5/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>

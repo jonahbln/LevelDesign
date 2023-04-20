@@ -77,8 +77,8 @@
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Pooling/ArrayPool.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Optimization/InstanceFunctionInvoker_5.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Serialization/Serialization.cs" />
-    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Optimization/InstanceActionInvoker_1.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Namespace.cs" />
+    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Optimization/InstanceActionInvoker_1.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Operators/DivisionHandler.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Optimization/StaticActionInvoker_1.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Optimization/StaticFunctionInvoker_2.cs" />
@@ -119,8 +119,8 @@
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Optimization/StaticFunctionInvokerBase.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/MessageListeners/MonoBehaviourMessageListeners/UnityOnCollisionEnterMessageListener.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Serialization/Converters/NamespaceConverter.cs" />
-    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/UnityMessageListener.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/SerializedProperties/SerializedPropertyProvider.cs" />
+    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/UnityMessageListener.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/EventMachine.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Utilities/UnityObjectUtility.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Cloning/Cloners/ReflectedCloner.cs" />
@@ -194,9 +194,9 @@
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Operators/EqualityHandler.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/MessageListeners/MonoBehaviourMessageListeners/UnityOnControllerColliderHitMessageListener.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/MessageListeners/MonoBehaviourMessageListeners/UnityOnCollisionExit2DMessageListener.cs" />
-    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Graphs/IGraphElementDebugData.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Dependencies/FullSerializer/fsBaseConverter.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Dependencies/FullSerializer/Converters/Unity/Keyframe_DirectConverter.cs" />
+    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Graphs/IGraphElementDebugData.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Optimization/InvokerBase.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/IEventMachine.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/TypeName.cs" />
@@ -336,8 +336,8 @@
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Graphs/IGraphNest.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Cloning/ISpecifiesCloner.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/EditorBinding/Inspector/InspectorToggleLeftAttribute.cs" />
-    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Connections/ConnectionCollectionBase.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/EditorBinding/InspectableAttribute.cs" />
+    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Connections/ConnectionCollectionBase.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Utilities/ReferenceCollector.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Graphs/GraphsExceptionUtility.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Serialization/ISerializationDependency.cs" />
@@ -477,8 +477,8 @@
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Graphs/IGraphItem.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Operators/MultiplicationHandler.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/MessageListeners/UIEventsListeners/UnityOnToggleValueChangedMessageListener.cs" />
-    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/MessageListeners/MonoBehaviourMessageListeners/UnityOnMouseEnterMessageListener.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Utilities/IGettable.cs" />
+    <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/MessageListeners/MonoBehaviourMessageListeners/UnityOnMouseEnterMessageListener.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Reflection/Optimization/InstancePropertyAccessor.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/MessageListeners/MonoBehaviourMessageListeners/UnityOnTriggerExit2DMListener.cs" />
     <Compile Include="Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Core/Events/MessageListeners/UIEventsListeners/UnityOnSliderValueChangedMessageListener.cs" />
@@ -684,6 +684,9 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>/Applications/Unity/Hub/Editor/2021.2.10f1/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/AOT/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library/PackageCache/com.unity.visualscripting@1.7.6/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
