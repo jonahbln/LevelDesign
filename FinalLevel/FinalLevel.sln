@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{2EF90CC8-E088-13B1-4F5F-A15E282116B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ink-Libraries", "Ink-Libraries.csproj", "{B43626A8-3516-FC3D-016E-19705C8DAFA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InkEditor", "InkEditor.csproj", "{CDAB412D-54AC-1E96-7D43-D29823CD38BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{2EF90CC8-E088-13B1-4F5F-A15E282116B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EF90CC8-E088-13B1-4F5F-A15E282116B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EF90CC8-E088-13B1-4F5F-A15E282116B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B43626A8-3516-FC3D-016E-19705C8DAFA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B43626A8-3516-FC3D-016E-19705C8DAFA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B43626A8-3516-FC3D-016E-19705C8DAFA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B43626A8-3516-FC3D-016E-19705C8DAFA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDAB412D-54AC-1E96-7D43-D29823CD38BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDAB412D-54AC-1E96-7D43-D29823CD38BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDAB412D-54AC-1E96-7D43-D29823CD38BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDAB412D-54AC-1E96-7D43-D29823CD38BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
