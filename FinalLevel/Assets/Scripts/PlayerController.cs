@@ -13,14 +13,18 @@ public class PlayerController : MonoBehaviour
     Vector3 input;
     Vector3 moveDirection;
 
+    float sprintMultiplier;
+
     void Start()
     {
+        sprintMultiplier = 1f;
         controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
@@ -45,8 +49,16 @@ public class PlayerController : MonoBehaviour
             moveDirection = Vector3.Lerp(moveDirection, input, airControl * Time.deltaTime);
         }
 
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            sprintMultiplier = 1.7f;
+        } else
+        {
+            sprintMultiplier = 1f;
+        }
+
         moveDirection.y -= gravity * Time.deltaTime;
 
-        controller.Move(moveDirection * speed * Time.deltaTime);
+        controller.Move(moveDirection * speed * Time.deltaTime * sprintMultiplier);
     }
 }
